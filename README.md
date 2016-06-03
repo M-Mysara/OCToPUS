@@ -101,16 +101,21 @@ the following is performed for each sample within the stability files and named 
     	mapping as mapping.fasta
     
 	  	
+# Testing
+	./OCTOPUS.run _f /YOUR_PATH/stability.files _o /YOUR_OUTPUT_PATH//Out/ _r /YOUR_PATH/silva.bacteria.fasta _p 10 _u /YOUR_PATH/usearch8.1.1861_i86linux32 _i test
 
 
 # Citing:
-If you are going to use OCToPUS, please cite it with the included software (mothur, WEKA):
+If you are going to use OCToPUS, please cite it with the included software (mothur, WEKA, iped, catch, spades) together with usearch:
 
-    M.Mysara, M. Njima, J. Raes, N.Leys, P.Monsieurs (2016) From Reads to Operational Taxonomic Units: Comparative Analysis of Amplicon Sequences Processing pipelines.
-    Mysara M, Leys N, Raes J, Monsieurs P. (2016). IPED: a highly efficient denoising tool for Illumina MiSeq Paired-end 16S rRNA gene amplicon sequencing data. BMC Bioinformatics 17:192.
-    Mysara M, Saeys Y, Leys N, Raes J, Monsieurs P. (2015). CATCh, an ensemble classifier for chimera detection in 16S rRNA sequencing studies. Appl. Environ. Microbiol. 81:1573–84.
-    Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
-    Hall M, National H, Frank E, Holmes G, Pfahringer B, Reutemann P, et al. (2009). The WEKA Data Mining Software?: An Update. SIGKDD Explorations 11:10–18.
+    OCToPus:	M.Mysara, M. Njima, J. Raes, N.Leys, P.Monsieurs (2016) From Reads to Operational Taxonomic Units: Comparative Analysis of Amplicon Sequences Processing pipelines.
+    IPED:	Mysara M, Leys N, Raes J, Monsieurs P. (2016). IPED: a highly efficient denoising tool for Illumina MiSeq Paired-end 16S rRNA gene amplicon sequencing data. BMC Bioinformatics 17:192.
+    CATCh:	Mysara M, Saeys Y, Leys N, Raes J, Monsieurs P. (2015). CATCh, an ensemble classifier for chimera detection in 16S rRNA sequencing studies. Appl. Environ. Microbiol. 81:1573–84.
+    mothur:	Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
+    WEKA:	Hall M, National H, Frank E, Holmes G, Pfahringer B, Reutemann P, et al. (2009). The WEKA Data Mining Software?: An Update. SIGKDD Explorations 11:10–18.
+    SPAdes:	Bankevich A, Nurk S, Antipov D, Gurevich AA, Dvorkin M, Kulikov AS, et al. (2012). SPAdes: a new genome assembly algorithm and its applications to single-cell sequencing. J. Comput. Biol. 19:455–77.
+    UPARSE:	Edgar RC. (2013). UPARSE: highly accurate OTU sequences from microbial amplicon reads. Nat. Methods 10:996–8.
+
 Contact:
 For questions, bugs and suggestions, please refer to mohamed.mysara@gmail.com & pieter.monsieurs@sckcen.be
 Developed by M.Mysara et al. 2016
