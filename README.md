@@ -6,16 +6,11 @@ Here we introduce OCToPUS, which is making an optimal combination of different a
 
 OCToPUS software can be downloaded from the release section here (https://github.com/M-Mysara/OCToPUS/releases) 
 
-# Tutorial Video:
-You can download a tutorial video illustrating running OCToPUS using the supplied test dataset from this link:
-
-    https://github.com/M-Mysara/OCToPUS/releases/download/OCToPUS/OCToPUS_Tutorial.mp4
-    
 # Installation Requirement
 Both Perl and Java needed to be installed to run OCToPUS. All other software packages that are required to run OCToPUS are included in the downloaded file (OCToPUS_V?.run). In case you are interested in the source code of OCToPUS, this is also included in the downloaded file. Only in case you want to run the source code, you will need to install those software components separately, and adapt the source code referring to those software components accordingly. In all other cases, we encourage the end-user to use the OCToPUS_V?.run executable.
 
 # Included Software
-Software listed below is used by the IPED algorithm. However you do NOT need to install it separately as these software modules are included in the IPED software.
+Software listed below is used by the OCToPUS algorithm. However you do NOT need to install it separately as these software modules are included in the OCToPUS software.
 
     Mothur v.1.33.3:
          Available at http://www.mothur.org/wiki/Download_mothur. 
@@ -37,8 +32,8 @@ All of these software (in addition to OCToPUS) are under the GNU licence.
 
 In addition due to license restrictions, usearch has to be downloaded and installed by the user. It will be parsed to the OCToPUS via _u option (see below)
 
-      usearch 8.1.1861
-       Available at http://www.drive5.com/usearch/
+    usearch 8.1.1861
+         Available at http://www.drive5.com/usearch/
 
 # Syntax:
 
@@ -48,19 +43,74 @@ In addition due to license restrictions, usearch has to be downloaded and instal
 
 Mandatory Options:
 	
-        _f stability file (tab separated file with sample ID, forward fastq, reverse fastq files)  
-           for example: 
-                      Sample1 Sample1_L001_R1_001.fastq Sample1_L001_R2_001.fastq
-                      Sample2 Sample2_L001_R1_001.fastq Sample2_L001_R2_001.fastq
+    _f stability file (tab separated file with sample ID, forward fastq, reverse fastq files)  
+         for example: 
+         	Sample1 Sample1_L001_R1_001.fastq Sample1_L001_R2_001.fastq
+         	Sample2 Sample2_L001_R1_001.fastq Sample2_L001_R2_001.fastq
                       
-        _r Reference database for aligning as silva (mothur compatable). 
-            can be downloaded from: http://www.mothur.org/wiki/Silva_reference_files
+    _r Reference database for aligning as silva (mothur compatable). 
+         it can be downloaded from: http://www.mothur.org/wiki/Silva_reference_files
             
-        _o Output directory 
-           for example: /YOUR/OUTPUT/PATH/
+    _o Output directory 
+         for example: /YOUR/OUTPUT/PATH/
            
-        _u USEARCH executable path  
-        _i Output folder name (default: random number)
-	 
-	 #Non-mandatory Options:
-	_p number of processors (default =1)
+    _u USEARCH executable path  
+         downlaoded from http://www.drive5.com/usearch/ (tested on version 8.1.1861)
+         
+    _i ID of your output folder name (default: random number)
+
+         
+Non-mandatory Options:
+
+    _p number of processors (default =1)
+    
+# Output Files
+The OCToPUS program generates different text output files within the output directory named with random number or the specified name in _i option.
+The final files are:
+
+    OCToPUS_OTUs.fasta: fasta file with the OTUs sequences.
+    OCToPUS.shared: shared file with the OTU table, it can be exported to mothur pipeline for downstream analysis.
+    OCToPUS.biom: biom file with OTU table, it can be exported to QIIME pipeline for downstream analysis.
+    OCToPUS_otutab_txt: OTU table, it can be exported to USEARCH pipeline for downstream analysis.
+
+The temporaty files are:
+the following is performed for each sample within the stability files and named accordingly
+
+    For SPAdes: it is stored in "correct" folder, containing both forward and reverse fastq files after Pre-assembly error correction. The files overwrite the former sample's SPAdes output 
+    For mothur: the intermediate files exist within the output directory after:
+    	assembly via make.contgis (.contigs.qual and .trim.contigs.fasta files)
+    	quality filtering via trim.seqs (.trim.fasta)
+    	dereplication via unique.seqs (.unique.fasta and .names files)
+    	alignment via align.seqs (.align)
+    	alignment screening via screen.seqs (.good.align and .good.names files)
+    	aligmnent filtering via filter.seqs (.filter.fasta)
+    	final dereplication via unique.seqs (.unqiue.fasta and .names files)
+    For IPED: the denoised fasta and name file are storred (under ./IPED_Final/SampleID/) as Results.IPED.names & Results.IPED.fasta
+ 
+ the following is performed after all samples are joined together:
+
+    For CATCh: The chimera detection of the different tools are stored within the output directory:
+    	For Perseus: via mothur command chimera.perseus (as .perseus.chimeras)
+    	For ChimeraSlayer: via mothur command chimera.slayer (as .slayer.chimeras)
+    	For Uchime: via mothur command chimera.uchime (as .uchime.chimeras)
+    	CATCh finaly output is stored under "All" folder" as CATCH_Results.arff.Final_Results.
+
+    For UPARSE, the intermediate files exist within the output directory after 
+    	sorting as sorted.fasta
+    	clustering as otus.fasta
+    	mapping as mapping.fasta
+    
+	  	
+
+
+# Citing:
+If you are going to use OCToPUS, please cite it with the included software (mothur, WEKA):
+
+    M.Mysara, M. Njima, J. Raes, N.Leys, P.Monsieurs (2016) From Reads to Operational Taxonomic Units: Comparative Analysis of Amplicon Sequences Processing pipelines.
+    Mysara M, Leys N, Raes J, Monsieurs P. (2016). IPED: a highly efficient denoising tool for Illumina MiSeq Paired-end 16S rRNA gene amplicon sequencing data. BMC Bioinformatics 17:192.
+    Mysara M, Saeys Y, Leys N, Raes J, Monsieurs P. (2015). CATCh, an ensemble classifier for chimera detection in 16S rRNA sequencing studies. Appl. Environ. Microbiol. 81:1573–84.
+    Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
+    Hall M, National H, Frank E, Holmes G, Pfahringer B, Reutemann P, et al. (2009). The WEKA Data Mining Software?: An Update. SIGKDD Explorations 11:10–18.
+Contact:
+For questions, bugs and suggestions, please refer to mohamed.mysara@gmail.com & pieter.monsieurs@sckcen.be
+Developed by M.Mysara et al. 2016
