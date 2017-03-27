@@ -1,5 +1,6 @@
 # OCToPUS
-##Amplicon sequencing processing pipeline
+## Amplicon sequencing processing pipeline
+## Mysara, M., Njima, M., et al., 2017. From reads to operational taxonomic units: an ensemble processing pipeline for MiSeq amplicon sequencing data. GigaScience.
 ##From Reads to Operational Taxonomic Units
 The development of high-throughput sequencing technologies has provided researchers with an efficient approach to assess the microbial diversity at an unseen depth, particularly with the recent advances in the Illumina MiSeq sequencing platform. However, analysing such high-throughput data is posing important computational challenges, requiring specialized bioinformatics solutions at different stages during the processing pipeline, such as assembly of paired-end reads, chimera removal, correction of sequencing errors and clustering of those sequences into Operational Taxonomic Units (OTUs).
 Here we introduce OCToPUS, which is making an optimal combination of different algorithms. OCToPUS achieves the lowest error rate, minimum number of spurious OTUs, and the closest correspondence to the existing community, while retaining the uppermost amount of reads when compared to other pipelines. 
@@ -108,7 +109,7 @@ the following is performed for each sample within the stability files and named 
 # Citing:
 If you are going to use OCToPUS, please cite it with the included software (mothur, WEKA, iped, catch, spades) together with usearch:
 
-    OCToPus:	M.Mysara, M. Njima, J. Raes, N.Leys, P.Monsieurs (2016) From Reads to Operational Taxonomic Units: Comparative Analysis of Amplicon Sequences Processing pipelines.
+    OCToPus:	Mysara, M., Njima, M., et al., 2017. From reads to operational taxonomic units: an ensemble processing pipeline for MiSeq amplicon sequencing data. GigaScience.
     IPED:	Mysara M, Leys N, Raes J, Monsieurs P. (2016). IPED: a highly efficient denoising tool for Illumina MiSeq Paired-end 16S rRNA gene amplicon sequencing data. BMC Bioinformatics 17:192.
     CATCh:	Mysara M, Saeys Y, Leys N, Raes J, Monsieurs P. (2015). CATCh, an ensemble classifier for chimera detection in 16S rRNA sequencing studies. Appl. Environ. Microbiol. 81:1573–84.
     mothur:	Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
