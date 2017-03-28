@@ -1,6 +1,6 @@
 # OCToPUS
 ## Amplicon sequencing processing pipeline
-## Mysara, M., Njima, M., et al., 2017. From reads to operational taxonomic units: an ensemble processing pipeline for MiSeq amplicon sequencing data. GigaScience.
+### Mysara, M., Njima, M., et al., 2017. From reads to operational taxonomic units: an ensemble processing pipeline for MiSeq amplicon sequencing data. GigaScience.
 ##From Reads to Operational Taxonomic Units
 The development of high-throughput sequencing technologies has provided researchers with an efficient approach to assess the microbial diversity at an unseen depth, particularly with the recent advances in the Illumina MiSeq sequencing platform. However, analysing such high-throughput data is posing important computational challenges, requiring specialized bioinformatics solutions at different stages during the processing pipeline, such as assembly of paired-end reads, chimera removal, correction of sequencing errors and clustering of those sequences into Operational Taxonomic Units (OTUs).
 Here we introduce OCToPUS, which is making an optimal combination of different algorithms. OCToPUS achieves the lowest error rate, minimum number of spurious OTUs, and the closest correspondence to the existing community, while retaining the uppermost amount of reads when compared to other pipelines. 
