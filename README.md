@@ -56,7 +56,8 @@ Mandatory Options:
          for example: /YOUR/OUTPUT/PATH/
            
     _u USEARCH executable path  
-         downlaoded from http://www.drive5.com/usearch/ (tested on version 8.1.1861)
+         downlaoded from http://www.drive5.com/usearch/ (tested on version 8.1.1861) 
+	 for example (_u /home/username/usearch8.1.186linux32
          
     _i ID of your output folder name (default: random number)
 
