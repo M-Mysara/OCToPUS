@@ -44,10 +44,10 @@ In addition due to license restrictions, usearch has to be downloaded and instal
 
 Mandatory Options:
 	
-    _f stability file (tab separated file with sample ID, forward fastq, reverse fastq files)  
+    _f stability file (tab separated file with sample ID, forward fastq, reverse fastq files using the full PATH)  
          for example: 
-         	Sample1 Sample1_L001_R1_001.fastq Sample1_L001_R2_001.fastq
-         	Sample2 Sample2_L001_R1_001.fastq Sample2_L001_R2_001.fastq
+         	Sample1 /FULL/PATH/Sample1_L001_R1_001.fastq /FULL/PATH/Sample1_L001_R2_001.fastq
+         	Sample2 /FULL/PATH/Sample2_L001_R1_001.fastq /FULL/PATH/Sample2_L001_R2_001.fastq
                       
     _r Reference database for aligning as silva (mothur compatable). 
          it can be downloaded from: http://www.mothur.org/wiki/Silva_reference_files
