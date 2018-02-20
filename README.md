@@ -8,7 +8,7 @@ Here we introduce OCToPUS, which is making an optimal combination of different a
 OCToPUS software can be downloaded from the release section here (https://github.com/M-Mysara/OCToPUS/releases) 
 
 # Installation Requirement
-Both Perl and Java needed to be installed to run OCToPUS. All other software packages that are required to run OCToPUS are included in the downloaded file (OCToPUS_V?.run). In case you are interested in the source code of OCToPUS, this is also included in the downloaded file. Only in case you want to run the source code, you will need to install those software components separately, and adapt the source code referring to those software components accordingly. In all other cases, we encourage the end-user to use the OCToPUS_V?.run executable.
+Both Perl, Python (versions 2.4 to 3.5) and Java needed to be installed to run OCToPUS. All other software packages that are required to run OCToPUS are included in the downloaded file (OCToPUS_V?.run). In case you are interested in the source code of OCToPUS, this is also included in the downloaded file. Only in case you want to run the source code, you will need to install those software components separately, and adapt the source code referring to those software components accordingly. In all other cases, we encourage the end-user to use the OCToPUS_V?.run executable.
 
 # Included Software
 Software listed below is used by the OCToPUS algorithm. However you do NOT need to install it separately as these software modules are included in the OCToPUS software.
